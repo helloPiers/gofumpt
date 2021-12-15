@@ -535,7 +535,7 @@ func (f *fumpter) applyPre(c *astutil.Cursor) {
 			}
 		}
 
-		f.removeLinesBetween(bodyEnd, node.Rbrace)
+		//f.removeLinesBetween(bodyEnd, node.Rbrace)
 
 		if cond != nil && f.Line(cond.Pos()) != f.Line(cond.End()) {
 			// The body is preceded by a multi-line condition, so an
@@ -576,7 +576,7 @@ func (f *fumpter) applyPre(c *astutil.Cursor) {
 			}
 		}
 
-		f.removeLinesBetween(node.Lbrace, bodyPos)
+		//f.removeLinesBetween(node.Lbrace, bodyPos)
 
 	case *ast.CaseClause:
 		f.stmts(node.Body)
